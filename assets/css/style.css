@@ -1,0 +1,16 @@
+.logo {
+  width: 130px;
+}
+body { 
+  background: url('../images/worldmap.png');
+background-repeat: no-repeat;
+background-attachment: fixed; 
+background-size: 100% 100%;
+}
+
+.square {
+  background-color: blue;
+  width: 20px;
+  height: 20px;
+  
+}
