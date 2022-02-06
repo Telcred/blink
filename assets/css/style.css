@@ -1,16 +1,29 @@
 .logo {
   width: 130px;
 }
-body { 
-  background: url('../images/worldmap.png');
-background-repeat: no-repeat;
-background-attachment: fixed; 
-background-size: 100% 100%;
+
+body {
+  background: url('../images/darkworldmap.png');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
 }
 
 .square {
-  background-color: blue;
-  width: 20px;
-  height: 20px;
-  
+  background-color: #fc6e2b;
+  width: 10px;
+  height: 10px;
+  border-radius: 25px;
+
 }
+
+#switch {
+  color: #fc6e2b;
+  background-color: black;
+  height: 40px;
+  width: 70px;
+  position: absolute;
+  right: 93%;
+  bottom: 2%;
+  border: none;
+ 
