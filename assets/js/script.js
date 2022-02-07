@@ -1,6 +1,6 @@
 const lightworldmap = "url('assets/images/lightworldmap.png')";
 const darkworldmap = "url('assets/images/darkworldmap.png')";
-let usinglightbackground = false;
+
 
 main();
 
@@ -52,7 +52,7 @@ function makeEvent(x, y, second) {
 
 async function printCircle(x, y) {
     let square = document.createElement("div");
-    document.getElementsByTagName("body")[0].appendChild(square);
+    document.getElementById("map").appendChild(square);
     square.setAttribute('class', 'square');
     square.style.position = "absolute";
     square.style.left = x + "%";
@@ -64,30 +64,32 @@ async function printCircle(x, y) {
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
-let button = document.getElementById("switch")
-button.addEventListener("click", switchbackground);
-
-
-
+// Change background and botton color dark/light
+let button = document.getElementById("mode")
+button.addEventListener("change", switchbackground);
 
 function switchbackground() {
-    let bodystyle = document.getElementsByTagName('body')[0].style;
-    let buttonstyle = document.getElementById("switch").style;
-    if (usinglightbackground) {
+    let bodystyle = document.getElementById("map").style;
+    let buttonstyle = document.getElementById("fullscreen").style;
+    let modeSelection = document.getElementById("mode").value;
+    if (modeSelection == "dark") {
         buttonstyle.backgroundColor = "#000000";
         bodystyle.backgroundImage = darkworldmap;
-        usinglightbackground = false;
-        openFullscreen();
     } else {
         buttonstyle.backgroundColor = "#ffffff";
-        bodystyle.backgroundImage = lightworldmap;
-        usinglightbackground = true;
+        bodystyle.backgroundImage = lightworldmap; 
     }
 
 }
 
+
+let fullscreenbutton = document.getElementById("fullscreen")
+fullscreenbutton.addEventListener("click", openFullscreen);
+
+
+// Fullscreen including Safari & IE11
 function openFullscreen() {
-    let doc = document.documentElement;
+    let doc = document.getElementById("map");
     if (doc.requestFullscreen) {
         doc.requestFullscreen();
     } else if (doc.webkitRequestFullscreen) {
@@ -98,3 +100,10 @@ function openFullscreen() {
         doc.msRequestFullscreen();
     }
 }
+
+// FullScreen knapp
+// Riktig data
+// ReadME
+// Comments 
+// Small screen sizes in Css 
+

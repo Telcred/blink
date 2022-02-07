@@ -11,9 +11,25 @@
 </head>
 
 <body>
-  <img class="logo" src="assets/images/logo_orange_on_transparent.png">
+  <div id="map"></div>
 
-  <button id="switch">Switch Mode</button>
+  <div class="eventinfo">
+  <h1>Geographic Event Visualization</h1>
+
+  <p>The Geographic Event Visualizer display events with a latitude and longitude on a world map. 
+    A batch of events is requested over HTTP once per minute and presented as 
+    dots in the correct location, on a world map. 
+    Events in the same batch will appear at the correct time relative to each other.</p>
+
+  <button id="switch">Switch Mode</button> 
+
+  <button id="fullscreen">FullScreen</button> 
+
+  <label for="mode">Mode:</label>
+  <select name="mode" id="mode">
+    <option value="dark">Dark</option>
+    <option value="light">Light</option>
+  </select>
 
   <script src="assets/js/script.js"></script>
 </body>
