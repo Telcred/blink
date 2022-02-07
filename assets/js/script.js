@@ -1,3 +1,7 @@
+const lightworldmap = "url('assets/images/lightworldmap.png')";
+const darkworldmap = "url('assets/images/darkworldmap.png')";
+let usinglightbackground = false;
+
 main();
 
 async function main() {
@@ -31,7 +35,7 @@ function makeEventList() {
     answer.push(makeEvent(55, 35, 5));
     answer.push(makeEvent(80, 30, 3));
     answer.push(makeEvent(30, 10, 9));
-    answer.push(makeEvent(50, 40, 3));
+    answer.push(makeEvent(51, 40, 3));
     answer.push(makeEvent(15, 40, 1));
     answer.push(makeEvent(45, 60, 3));
     answer.push(makeEvent(50, 25, 3));
@@ -63,17 +67,8 @@ function sleep(ms) {
 let button = document.getElementById("switch")
 button.addEventListener("click", switchbackground);
 
-// tag på kanppen evenlisterner click -> functionanrop 
-//functionen -> getelementstagname('body')(0).style.background = ''
 
-// Rätt placering på kartan 
-// Knapp för att byta till vit bakgrund
-// Knapp för att byta färg på knapparna
 
-const lightworldmap = "url('assets/images/lightworldmap.png')";
-const darkworldmap = "url('assets/images/darkworldmap.png')";
-
-let usinglightbackground = false;
 
 function switchbackground() {
     let bodystyle = document.getElementsByTagName('body')[0].style;
@@ -82,10 +77,24 @@ function switchbackground() {
         buttonstyle.backgroundColor = "#000000";
         bodystyle.backgroundImage = darkworldmap;
         usinglightbackground = false;
+        openFullscreen();
     } else {
         buttonstyle.backgroundColor = "#ffffff";
         bodystyle.backgroundImage = lightworldmap;
         usinglightbackground = true;
     }
 
+}
+
+function openFullscreen() {
+    let doc = document.documentElement;
+    if (doc.requestFullscreen) {
+        doc.requestFullscreen();
+    } else if (doc.webkitRequestFullscreen) {
+        /* Safari */
+        doc.webkitRequestFullscreen();
+    } else if (doc.msRequestFullscreen) {
+        /* IE11 */
+        doc.msRequestFullscreen();
+    }
 }
