@@ -1,6 +1,8 @@
 const lightworldmap = "url('assets/images/lightworldmap.png')";
 const darkworldmap = "url('assets/images/darkworldmap.png')";
 
+let dotSizePx = 10;
+let durationSec = 3;
 
 main();
 
@@ -57,7 +59,9 @@ async function printCircle(x, y) {
     square.style.position = "absolute";
     square.style.left = x + "%";
     square.style.top = y + "%";
-    await sleep(2000 + (Math.random() * 2500));
+    square.style.height = dotSizePx + "px";
+    square.style.width = dotSizePx + "px";
+    await sleep(durationSec * 1000);
     square.remove();
 }
 
@@ -79,20 +83,17 @@ function switchbackground() {
         buttonstyle.backgroundColor = "#ffffff";
         bodystyle.backgroundImage = lightworldmap; 
     }
-
 }
 
-document.getElementById("dotSize").addEventListener("keydown", function (event) {
-    if (event.key === "Enter") {
-        checkAnswer();
-    }
-})
+document.getElementById("dotSizePx").value = dotSizePx;
 
-document.getElementById("duration").addEventListener("keydown", function (event) {
-    if (event.key === "Enter") {
-        checkAnswer();
-    }
-})
+document.getElementById("dotSizePx").addEventListener("input", function (event) {
+    dotSizePx = Math.max(Math.min(event.target.value, 20), 1)});
+
+document.getElementById("durationSec").value = durationSec;
+
+document.getElementById("durationSec").addEventListener("input", function (event) {
+   durationSec = Math.max(Math.min(event.target.value, 10), 1)});
 
 let fullscreenbutton = document.getElementById("fullscreen")
 fullscreenbutton.addEventListener("click", openFullscreen);

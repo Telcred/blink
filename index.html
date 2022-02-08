@@ -18,8 +18,8 @@
 
 
   <!-- Project discription   -->
-  <section>
-    <div class="eventinfo">
+  <div class="lowerHalf">
+      <section>
       <h2>Geographic Event Visualization</h2>
 
       <p>
@@ -27,9 +27,8 @@
         A batch of events is requested over HTTP once per minute and presented as
         dots in the correct location, on a world map.
         Events in the same batch will appear at the correct time relative to each other.</p>
-    </div>
-    <button >HEJ</button>
-    <form class="userInput">
+      </section>
+    <div class="userInput">
       <span class="userInputElement">
         <label for="mode">Mode:</label>
         <select name="mode" id="mode">
@@ -38,15 +37,15 @@
         </select>
       </span>
       <span class="userInputElement">
-        <label for="dotSize">Dot Size:</label>
-        <input id="dotSize" type="number" min="1" max="5">
+        <label for="dotSizePx">Dot Size:</label>
+        <input id="dotSizePx" type="number" min="1" max="20">
       </span>
       <span class="userInputElement">
-        <label for="duration">Duration:</label>
-        <input id="duration" type="number" min="1" max="5">
+        <label for="durationSec">Duration:</label>
+        <input id="durationSec" type="number" min="1" max="10">
       </span>
-    </form>
-  </section>
+    </div>
+  </div>
   <script src="assets/js/script.js"></script>
 
   <!-- font awesome script-->
