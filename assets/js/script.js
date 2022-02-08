@@ -82,6 +82,17 @@ function switchbackground() {
 
 }
 
+document.getElementById("dotSize").addEventListener("keydown", function (event) {
+    if (event.key === "Enter") {
+        checkAnswer();
+    }
+})
+
+document.getElementById("duration").addEventListener("keydown", function (event) {
+    if (event.key === "Enter") {
+        checkAnswer();
+    }
+})
 
 let fullscreenbutton = document.getElementById("fullscreen")
 fullscreenbutton.addEventListener("click", openFullscreen);
@@ -101,7 +112,6 @@ function openFullscreen() {
     }
 }
 
-// FullScreen knapp
 // Riktig data
 // ReadME
 // Comments 

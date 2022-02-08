@@ -1,58 +1,119 @@
-.logo {
-  width: 130px;
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Verdana, sans-serif;
+  font-weight: 300;
+  color: #000000;
 }
 
 #map {
   background: url('../images/darkworldmap.png');
   background-repeat: no-repeat;
+
   /*background-attachment: fixed;*/
   background-size: 100% 100%;
   height: 50%;
   width: 100%;
   position: absolute;
   overflow: auto;
-} 
-
-h1 {
-  bottom: 25%;
 }
 
-.eventinfo, h1 {
-  color: #fc6e2b;
-  position: absolute;
-  padding-left: 30%;
-  bottom: 25%;
-}
-
-
+/* Blinking dot on map */
 .square {
   background-color: #fc6e2b;
   width: 10px;
   height: 10px;
   border-radius: 25px;
-
 }
 
-#switch {
-  color: #fc6e2b;
-  background-color: black;
-  height: 40px;
-  width: 70px;
-  position: absolute;
-  right: 93%;
-  bottom: 2%;
-  border: none;
-}
-
+/* FullScreen button */
 #fullscreen {
-  color: #fc6e2b;
-  background-color: black;
-  height: 40px;
-  width: 70px;
-  position: absolute;
-  right: 87%;
-  bottom: 2%;
   border: none;
+  position: absolute;
+  bottom: 52%;
+  left: 16px;
+  font-size: 15px;
+  color: gray;
+  background-color: black;
+}
+
+h2 {
+  font-size: 110%;
+  font-family: verdana, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 40px;
+  color: black;
+}
+
+/* Infomation discibing the project  */
+.eventinfo {
+  color: black;
+  font-size: 12px;
+  position: absolute;
+  padding-left: 15%;
+  padding-right: 15%;
+  bottom: 25%;
+  text-align: center;
+  top: 50%;
+  width: 70%;
+}
+
+/* For small screens size from 700px wide and down */
+@media screen and (max-width: 700px) {
+  .eventinfo {
+    color: black;
+    position: absolute;
+    padding-left: 20px;
+    padding-right: 20px;
+    bottom: 25%;
+    text-align: left;
+    top: 50%;
+    width: 90%;
+  }
+}
+
+.userInput {
+  color: black;
+  font-size: 12px;
+  position: absolute;
+  bottom: 20%;
+  padding-left: 11%;
+  margin: 20px;
+  text-align: center;
+  width: 70%;
+}
+
+/* For small screens size from 700px wide and down */
+@media screen and (max-width: 700px) {
+  .userInput {
+    color: black;
+    position: absolute;
+    padding-left: 0%;
+    font-size: 12px;
+    margin: 0px;
+    text-align: center;
+  }
 }
 
 
+.userInputElement {
+  display: inline;
+  padding: 0.3rem;
+  font-size: 10px;
+
+}
+
+/* For small screens size from 700px wide and down */
+@media screen and (max-width: 700px) {
+  .userInputElement {
+    display: block;
+    padding: 0.3rem;
+    font-size: 10px;
+  }
+}

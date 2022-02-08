@@ -2,36 +2,55 @@
 <html lang="en">
 
 <head>
+
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=, initial-scale=1.0">
-
   <link rel="stylesheet" href="assets/css/style.css">
+
   <title>Blink</title>
 </head>
 
 <body>
+
   <div id="map"></div>
+  <button id="fullscreen"><i class="fas fa-expand-arrows-alt"></i></button>
 
-  <div class="eventinfo">
-  <h1>Geographic Event Visualization</h1>
 
-  <p>The Geographic Event Visualizer display events with a latitude and longitude on a world map. 
-    A batch of events is requested over HTTP once per minute and presented as 
-    dots in the correct location, on a world map. 
-    Events in the same batch will appear at the correct time relative to each other.</p>
+  <!-- Project discription   -->
+  <section>
+    <div class="eventinfo">
+      <h2>Geographic Event Visualization</h2>
 
-  <button id="switch">Switch Mode</button> 
-
-  <button id="fullscreen">FullScreen</button> 
-
-  <label for="mode">Mode:</label>
-  <select name="mode" id="mode">
-    <option value="dark">Dark</option>
-    <option value="light">Light</option>
-  </select>
-
+      <p>
+        The Geographic Event Visualizer display events with a latitude and longitude on a world map.
+        A batch of events is requested over HTTP once per minute and presented as
+        dots in the correct location, on a world map.
+        Events in the same batch will appear at the correct time relative to each other.</p>
+    </div>
+    <button >HEJ</button>
+    <form class="userInput">
+      <span class="userInputElement">
+        <label for="mode">Mode:</label>
+        <select name="mode" id="mode">
+          <option value="dark">Dark</option>
+          <option value="light">Light</option>
+        </select>
+      </span>
+      <span class="userInputElement">
+        <label for="dotSize">Dot Size:</label>
+        <input id="dotSize" type="number" min="1" max="5">
+      </span>
+      <span class="userInputElement">
+        <label for="duration">Duration:</label>
+        <input id="duration" type="number" min="1" max="5">
+      </span>
+    </form>
+  </section>
   <script src="assets/js/script.js"></script>
+
+  <!-- font awesome script-->
+  <script src="https://kit.fontawesome.com/c471c78bf3.js" crossorigin="anonymous"></script>
 </body>
 
 </html>
