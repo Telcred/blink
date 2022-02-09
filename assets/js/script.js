@@ -102,11 +102,11 @@ function switchbackground() {
     if (modeSelection == "dark") {
         buttonstyle.backgroundColor = "#000000";
         bodystyle.backgroundImage = darkworldmap;
-        bodystyle.backgroundColor = "#000000";
+        bodystyle.backgroundColor = "#ffffff";
     } else {
         buttonstyle.backgroundColor = "#ffffff";
         bodystyle.backgroundImage = lightworldmap;
-        bodystyle.backgroundColor = "#ffffff";
+        bodystyle.backgroundColor = "#000000";
     }
 }
 
