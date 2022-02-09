@@ -1,4 +1,4 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+
 
 # Blink
 
@@ -8,3 +8,6 @@ The idea behind this is to show where in the world the different events are happ
 
 ## Features
 
+- __The Logo and Heading__
+
+    - Highlighted to the left, at the top of the page: Blink is easy to located with it's bright orange color for users to see. 

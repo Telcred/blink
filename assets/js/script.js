@@ -1,23 +1,28 @@
-const lightworldmap = "url('assets/images/lightworldmap.png')";
-const darkworldmap = "url('assets/images/darkworldmap.png')";
+// Head and background 
+const lightworldmap = "url('assets/images/lightworldmaps.png')";
+const darkworldmap = "url('assets/images/darkworldmaps.png')";
 
+// User impact declaration and function
 let dotSizePx = 10;
 let durationSec = 3;
 
+// Set the min and max number for dot and duration for events
 document.getElementById("dotSizePx").value = dotSizePx;
 
 document.getElementById("dotSizePx").addEventListener("input", function (event) {
-    dotSizePx = Math.max(Math.min(event.target.value, 20), 1)});
+    dotSizePx = Math.max(Math.min(event.target.value, 20), 1)
+});
 
 document.getElementById("durationSec").value = durationSec;
 
 document.getElementById("durationSec").addEventListener("input", function (event) {
-   durationSec = Math.max(Math.min(event.target.value, 10), 1)});
+    durationSec = Math.max(Math.min(event.target.value, 10), 1)
+});
 
 let fullscreenbutton = document.getElementById("fullscreen")
 fullscreenbutton.addEventListener("click", openFullscreen);
 
-// Change background and botton color dark/light
+// Change background and button color dark/light
 let button = document.getElementById("mode")
 button.addEventListener("change", switchbackground);
 
@@ -29,15 +34,17 @@ async function main() {
         await update();
     }
 }
+
+// Fetch Returns given event from list, by time and specific given time
 async function update() {
     let eventList = makeEventList();
     for (let s = 0; s < 10; s++) {
-        printEventsAt(s, eventList);
+        printEventsBySec(s, eventList);
         await sleep(1000);
     }
 }
-
-function printEventsAt(s, eventList) {
+// Returns events over and over again
+function printEventsBySec(s, eventList) {
     for (let i = 0; i < eventList.length; i++) {
         if (eventList[i].second == s) {
             printCircle(eventList[i].x, eventList[i].y);
@@ -45,6 +52,7 @@ function printEventsAt(s, eventList) {
     }
 }
 
+// Returns events from a given list
 function makeEventList() {
     let answer = [];
     answer.push(makeEvent(28, 90, 3));
@@ -61,7 +69,7 @@ function makeEventList() {
     answer.push(makeEvent(50, 25, 3));
     return answer;
 }
-
+// Returns the correct and given spots and times for the events.
 function makeEvent(x, y, second) {
     return {
         x: x,
@@ -69,7 +77,7 @@ function makeEvent(x, y, second) {
         second: second
     };
 }
-
+// Adds event correctly on screen
 async function printCircle(x, y) {
     let square = document.createElement("div");
     document.getElementById("map").appendChild(square);
@@ -86,7 +94,7 @@ async function printCircle(x, y) {
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
-
+// Returns light or dark background
 function switchbackground() {
     let bodystyle = document.getElementById("map").style;
     let buttonstyle = document.getElementById("fullscreen").style;
@@ -94,9 +102,11 @@ function switchbackground() {
     if (modeSelection == "dark") {
         buttonstyle.backgroundColor = "#000000";
         bodystyle.backgroundImage = darkworldmap;
+        bodystyle.backgroundColor = "#000000";
     } else {
         buttonstyle.backgroundColor = "#ffffff";
-        bodystyle.backgroundImage = lightworldmap; 
+        bodystyle.backgroundImage = lightworldmap;
+        bodystyle.backgroundColor = "#ffffff";
     }
 }
 
@@ -115,9 +125,7 @@ function openFullscreen() {
     }
 }
 
-// Riktig data
 // ReadME
 // Comments 
 // Small screen sizes in Css 
 // PROBLEM - Dots 6 > blir rödfärg
-
