@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Armata&display=swap');
 
 * {
   margin: 0;
@@ -43,18 +43,18 @@ body {
 }
 
 h2 {
-  font-size: 150%;
-  font-family: verdana, sans-serif;
-  text-transform: uppercase;
+  font-size: 200%;
+  font-family: Armata, sans-serif;
   letter-spacing: 1px;
-  margin-bottom: 40px;
+  margin-bottom: 30px;
+  margin-top: 20px;
   color: black;
 }
 
 /* Infomation discibing the project  */
 .lowerHalf {
   color: black;
-  font-size: 12px;
+  font-size: 10px;
   position: absolute;
   padding-left: 15%;
   padding-right: 15%;
@@ -78,6 +78,13 @@ h2 {
   }
 }
 
+select {
+  font-size: 10px;
+}
+input {
+  font-size: 10px;
+  width: 26px;
+}
 .userInput {
   color: black;
   font-size: 10px;
@@ -87,30 +94,8 @@ h2 {
   transform: translate(0, -50%);
 }
 
-/* For small screens size from 700px wide and down */
-@media screen and (max-width: 300px) {
-  .userInput {
-    color: black;
-    padding-left: 0%;
-    font-size: 12px;
-    margin: 0px;
-    text-align: center;
-    left: 0; 
-  }
-}
-
-
 .userInputElement {
   display: inline;
-  padding: 0.3rem;
+  padding: 0.3em;
 
-}
-
-/* For small screens size from 700px wide and down */
-@media screen and (max-width: 300px) {
-  .userInputElement {
-    display: block;
-    padding: 0.3rem;
-    font-size: 10px;
-  }
 }

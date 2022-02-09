@@ -4,6 +4,23 @@ const darkworldmap = "url('assets/images/darkworldmap.png')";
 let dotSizePx = 10;
 let durationSec = 3;
 
+document.getElementById("dotSizePx").value = dotSizePx;
+
+document.getElementById("dotSizePx").addEventListener("input", function (event) {
+    dotSizePx = Math.max(Math.min(event.target.value, 20), 1)});
+
+document.getElementById("durationSec").value = durationSec;
+
+document.getElementById("durationSec").addEventListener("input", function (event) {
+   durationSec = Math.max(Math.min(event.target.value, 10), 1)});
+
+let fullscreenbutton = document.getElementById("fullscreen")
+fullscreenbutton.addEventListener("click", openFullscreen);
+
+// Change background and botton color dark/light
+let button = document.getElementById("mode")
+button.addEventListener("change", switchbackground);
+
 main();
 
 async function main() {
@@ -12,18 +29,19 @@ async function main() {
         await update();
     }
 }
-
 async function update() {
-    let eventlist = makeEventList();
+    let eventList = makeEventList();
     for (let s = 0; s < 10; s++) {
-        for (let i = 0; i < eventlist.length; i++) {
-            if (eventlist[i].second == s) {
-                printCircle(eventlist[i].x, eventlist[i].y);
-            }
-        }
-
+        printEventsAt(s, eventList);
         await sleep(1000);
+    }
+}
 
+function printEventsAt(s, eventList) {
+    for (let i = 0; i < eventList.length; i++) {
+        if (eventList[i].second == s) {
+            printCircle(eventList[i].x, eventList[i].y);
+        }
     }
 }
 
@@ -68,9 +86,6 @@ async function printCircle(x, y) {
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
-// Change background and botton color dark/light
-let button = document.getElementById("mode")
-button.addEventListener("change", switchbackground);
 
 function switchbackground() {
     let bodystyle = document.getElementById("map").style;
@@ -84,19 +99,6 @@ function switchbackground() {
         bodystyle.backgroundImage = lightworldmap; 
     }
 }
-
-document.getElementById("dotSizePx").value = dotSizePx;
-
-document.getElementById("dotSizePx").addEventListener("input", function (event) {
-    dotSizePx = Math.max(Math.min(event.target.value, 20), 1)});
-
-document.getElementById("durationSec").value = durationSec;
-
-document.getElementById("durationSec").addEventListener("input", function (event) {
-   durationSec = Math.max(Math.min(event.target.value, 10), 1)});
-
-let fullscreenbutton = document.getElementById("fullscreen")
-fullscreenbutton.addEventListener("click", openFullscreen);
 
 
 // Fullscreen including Safari & IE11
@@ -117,4 +119,5 @@ function openFullscreen() {
 // ReadME
 // Comments 
 // Small screen sizes in Css 
+// PROBLEM - Dots 6 > blir rödfärg
 
