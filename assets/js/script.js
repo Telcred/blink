@@ -1,33 +1,38 @@
-// Head and background 
+//Set up for the background image in dark and light color.
 const lightworldmap = "url('assets/images/lightworldmaps.png')";
 const darkworldmap = "url('assets/images/darkworldmaps.png')";
 
-// User impact declaration and function
+// Set up the control for the dot size.
 let dotSizePx = 10;
-let durationSec = 3;
-
-// Set the min and max number for dot and duration for events
 document.getElementById("dotSizePx").value = dotSizePx;
-
 document.getElementById("dotSizePx").addEventListener("input", function (event) {
     dotSizePx = Math.max(Math.min(event.target.value, 20), 1)
 });
 
+//Set up the control for dot duration. 
+let durationSec = 3;
 document.getElementById("durationSec").value = durationSec;
-
 document.getElementById("durationSec").addEventListener("input", function (event) {
     durationSec = Math.max(Math.min(event.target.value, 10), 1)
 });
 
+//Set up the control for fullscreen button.
 let fullscreenbutton = document.getElementById("fullscreen")
 fullscreenbutton.addEventListener("click", openFullscreen);
 
-// Change background and button color dark/light
+/**
+ * Set up the inpact for changing background
+ * and button color between dark and light.
+ */
 let button = document.getElementById("mode")
 button.addEventListener("change", switchbackground);
 
 main();
 
+/**
+ * Print out updated data repeatedly, but only if continueBlink 
+ * match with the givn statment, true. 
+ */
 async function main() {
     let continueBlink = true;
     while (continueBlink) {
@@ -35,24 +40,36 @@ async function main() {
     }
 }
 
-// Fetch Returns given event from list, by time and specific given time
+/**
+ * Fetch events that have occurred within 10 seconds of each other.
+ * Print each as occurred in real time. 
+ */
 async function update() {
     let eventList = makeEventList();
-    for (let s = 0; s < 10; s++) {
-        printEventsBySec(s, eventList);
+    for (let targetSecond = 0; targetSecond < 10; targetSecond++) {
+        printEventsBySec(eventList, targetSecond);
         await sleep(1000);
     }
 }
-// Returns events over and over again
-function printEventsBySec(s, eventList) {
+/**
+ * Print a dot for each given event, 
+ * but only those who’s second match a given second. 
+ * @param {array} eventList - The given events.
+ * @param {int} targetSecond - The given second.
+ */
+function printEventsBySec(eventList, targetSecond) {
     for (let i = 0; i < eventList.length; i++) {
-        if (eventList[i].second == s) {
+        if (eventList[i].second == targetSecond) {
             printCircle(eventList[i].x, eventList[i].y);
         }
     }
 }
 
-// Returns events from a given list
+/**
+ * Given information for each event. 
+ * Return correct data when printing each dot.
+ * @returns answer - correct data
+ */
 function makeEventList() {
     let answer = [];
     answer.push(makeEvent(28, 90, 3));
@@ -69,7 +86,13 @@ function makeEventList() {
     answer.push(makeEvent(50, 25, 3));
     return answer;
 }
-// Returns the correct and given spots and times for the events.
+/**
+ * 
+ * @param {array} x 
+ * @param {array} y 
+ * @param {array} second 
+ * @returns 
+ */
 function makeEvent(x, y, second) {
     return {
         x: x,
@@ -77,7 +100,12 @@ function makeEvent(x, y, second) {
         second: second
     };
 }
-// Adds event correctly on screen
+
+/**
+ * 
+ * @param {*} x 
+ * @param {*} y 
+ */
 async function printCircle(x, y) {
     let square = document.createElement("div");
     document.getElementById("map").appendChild(square);
@@ -102,14 +130,13 @@ function switchbackground() {
     if (modeSelection == "dark") {
         buttonstyle.backgroundColor = "#000000";
         bodystyle.backgroundImage = darkworldmap;
-        bodystyle.backgroundColor = "#ffffff";
+
     } else {
         buttonstyle.backgroundColor = "#ffffff";
         bodystyle.backgroundImage = lightworldmap;
-        bodystyle.backgroundColor = "#000000";
+
     }
 }
-
 
 // Fullscreen including Safari & IE11
 function openFullscreen() {
@@ -127,5 +154,3 @@ function openFullscreen() {
 
 // ReadME
 // Comments 
-// Small screen sizes in Css 
-// PROBLEM - Dots 6 > blir rödfärg
