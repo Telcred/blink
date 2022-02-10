@@ -29,14 +29,14 @@ h1 {
 }
 
 /* Blinking dot on map */
-.square {
+.blinkingDot {
   background-color: #fc6e2b;
   width: 10px;
   height: 10px;
   border-radius: 25px;
 }
 
-/* FullScreen button */
+/* Fullscreen button */
 #fullscreen {
   border: none;
   position: absolute;

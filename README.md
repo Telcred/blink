@@ -12,8 +12,29 @@ The idea behind this is to show where in the world the different events are happ
 
     - Highlighted to the left, at the top of the page: Blink is easy to spot with it's bright orange color logo for users to see. 
 
-- __The background display__
-    - This section displays the differnt events and shows the users where the differnt events are happening. 
+- __The Background Display__
+    - This section includes an image of a worldmap. The image displays where in the world the differnt events are happening. 
+    - This section is clean and grabs users attention with an eye-catching with a orange blinking dot across the image, that appears and dissapares repeatedly.  
+
+- __The Infomation Section__
+   - This section allows users to get an overview and an understanding about what the event does and thier meaning. 
+
+
+- __User Interaction Area__
+   - This section allows users to interact and to choose between the diffent options shown in the fields. 
+   - There are three oppurtunites for users to interact:
+        - Chaning image color of the backgorund, between dark and light mode.
+        - Chaning the size of the dots, between size 1 and size 20. 
+        - Chaning the appearance duration for the dots, between 1 and 20. 
+
+
+
+
+
+  
+
+
+
 
 
 

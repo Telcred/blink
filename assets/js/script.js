@@ -24,25 +24,24 @@ fullscreenbutton.addEventListener("click", openFullscreen);
 let button = document.getElementById("mode")
 button.addEventListener("change", switchbackground);
 
+// Run the application.
 main();
 
 /**
- * Print out updated data repeatedly, but only if continueBlink 
- * match with the given statement, true.
+ * Print out new batches of event repeatedly.
  */
 async function main() {
-    let continueBlink = true;
-    while (continueBlink) {
-        await update();
+    while (true) {
+        await printBatch();
     }
 }
 
 /**
- * Fetch events that have occurred within 10 seconds of each other.
- * Print each as occurred in real time. 
+ * Fetch a batch of events that have occurred within 10 seconds of each other.
+ * Print each as it occurred in real time. 
  */
-async function update() {
-    let eventList = makeEventList();
+async function printBatch() {
+    let eventList = makeEventBatch();
     for (let targetSecond = 0; targetSecond < 10; targetSecond++) {
         printEventsBySec(eventList, targetSecond);
         await sleep(1000);
@@ -67,7 +66,7 @@ function printEventsBySec(eventList, targetSecond) {
  * Make events that have occurred within 10 seconds of each other.
  * @returns A list of events in no particular order.
  */
-function makeEventList() {
+function makeEventBatch() {
     let answer = [];
     answer.push(makeEvent(28, 90, 3));
     answer.push(makeEvent(30, 65, 7));
@@ -85,11 +84,11 @@ function makeEventList() {
 }
 
 /**
- * Create an event. Events have a position and a time of accurrance.
+ * Create an event. Events have a position and a time of occurrance.
  * @param {int} x - Horizontal position [0, 99].
  * @param {int} y - Vertical position [0, 99].
- * @param {int} second - Time of accurrance in seconds [0, 9].
- * @returns 
+ * @param {int} second - Time of occurrance in seconds [0, 9].
+ * @returns The created event.
  */
 function makeEvent(x, y, second) {
     return {
@@ -101,31 +100,34 @@ function makeEvent(x, y, second) {
 
 /**
  * Print and remove a circle at a given location. 
- * To determin size of circle the global dotSizePx is used. 
- * To determin time between printing and removing the global durationSec is used.
+ * To determin the size of circle the global dotSizePx is used. 
+ * To determin the time between printing and removing the global durationSec is used.
  * @param {int} x - Horizontal position [0, 99].
  * @param {int} y - Vertical position [0, 99].
  */
 async function printCircle(x, y) {
-    let square = document.createElement("div");
-    document.getElementById("map").appendChild(square);
-    square.setAttribute('class', 'square');
-    square.style.position = "absolute";
-    square.style.left = x + "%";
-    square.style.top = y + "%";
-    square.style.height = dotSizePx + "px";
-    square.style.width = dotSizePx + "px";
-    await sleep(durationSec * 1000);
-    square.remove();
+    let blinkingDot = document.createElement("div");
+    document.getElementById("map").appendChild(blinkingDot);
+    blinkingDot.setAttribute('class', 'blinkingDot');
+    blinkingDot.style.position = "absolute";
+    blinkingDot.style.left = x + "%";
+    blinkingDot.style.top = y + "%";
+    blinkingDot.style.height = dotSizePx + "px";
+    blinkingDot.style.width = dotSizePx + "px";
+    await sleep(durationSec * 1000); // Wait for time to remove.
+    blinkingDot.remove();
 }
 
+/**
+ * Wait the given milliseconds.
+ * @param {int} ms - The given number of milliseconds.
+ */
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
 
 /**
- * Disply background in dark mode, unless light mode is chosen to show.
- * Changing between the diffent mode. 
+ * Tuggle between dark mode and light mode.
  */
 function switchbackground() {
     let bodystyle = document.getElementById("map").style;
@@ -143,20 +145,17 @@ function switchbackground() {
 }
 
 /**
- * Fullscreen mode, including Safari & IE11
+ * Enter fullscreen mode. 
  */
 function openFullscreen() {
-    let doc = document.getElementById("map");
-    if (doc.requestFullscreen) {
-        doc.requestFullscreen();
-    } else if (doc.webkitRequestFullscreen) {
-        /* Safari */
-        doc.webkitRequestFullscreen();
-    } else if (doc.msRequestFullscreen) {
-        /* IE11 */
-        doc.msRequestFullscreen();
+    let map = document.getElementById("map");
+    if (map.requestFullscreen) {
+        map.requestFullscreen();
+    } else if (map.webkitRequestFullscreen) {
+        map.webkitRequestFullscreen(); // Safari 
+    } else if (map.msRequestFullscreen) {
+        map.msRequestFullscreen(); // IE11 
     }
 }
 
 // ReadME
-// Comments 
