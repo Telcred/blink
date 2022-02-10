@@ -9,12 +9,18 @@ body {
   font-weight: 300;
   color: #000000;
 }
+/* Heading and logo */
+h1 {
+  font-size: 22px;
+  color: #fc6e2b;
+  position: absolute;
+  left: 13px;
 
+}
 /* Background-attachment */
 #map {
   background: url('../images/darkworldmaps.png');
   background-repeat: no-repeat;
-
   background-size: 100% 100%;
   height: 50%;
   width: 100%;
@@ -41,13 +47,6 @@ body {
   background-color: black;
 }
 
-h1 {
-  font-size: 22px;
-  color: #fc6e2b;
-  position: absolute;
-  left: 13px;
-
-}
 
 h2 {
   font-size: 200%;

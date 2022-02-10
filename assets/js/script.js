@@ -20,10 +20,7 @@ document.getElementById("durationSec").addEventListener("input", function (event
 let fullscreenbutton = document.getElementById("fullscreen")
 fullscreenbutton.addEventListener("click", openFullscreen);
 
-/**
- * Set up the inpact for changing background
- * and button color between dark and light.
- */
+// Set up the inpact for changing background and button color between dark and light.
 let button = document.getElementById("mode")
 button.addEventListener("change", switchbackground);
 
@@ -31,7 +28,7 @@ main();
 
 /**
  * Print out updated data repeatedly, but only if continueBlink 
- * match with the givn statment, true. 
+ * match with the given statement, true.
  */
 async function main() {
     let continueBlink = true;
@@ -51,6 +48,7 @@ async function update() {
         await sleep(1000);
     }
 }
+
 /**
  * Print a dot for each given event, 
  * but only those who’s second match a given second. 
@@ -66,9 +64,8 @@ function printEventsBySec(eventList, targetSecond) {
 }
 
 /**
- * Given information for each event. 
- * Return correct data when printing each dot.
- * @returns answer - correct data
+ * Make events that have occurred within 10 seconds of each other.
+ * @returns A list of events in no particular order.
  */
 function makeEventList() {
     let answer = [];
@@ -86,11 +83,12 @@ function makeEventList() {
     answer.push(makeEvent(50, 25, 3));
     return answer;
 }
+
 /**
- * 
- * @param {array} x 
- * @param {array} y 
- * @param {array} second 
+ * Create an event. Events have a position and a time of accurrance.
+ * @param {int} x - Horizontal position [0, 99].
+ * @param {int} y - Vertical position [0, 99].
+ * @param {int} second - Time of accurrance in seconds [0, 9].
  * @returns 
  */
 function makeEvent(x, y, second) {
@@ -102,9 +100,11 @@ function makeEvent(x, y, second) {
 }
 
 /**
- * 
- * @param {*} x 
- * @param {*} y 
+ * Print and remove a circle at a given location. 
+ * To determin size of circle the global dotSizePx is used. 
+ * To determin time between printing and removing the global durationSec is used.
+ * @param {int} x - Horizontal position [0, 99].
+ * @param {int} y - Vertical position [0, 99].
  */
 async function printCircle(x, y) {
     let square = document.createElement("div");
@@ -122,7 +122,11 @@ async function printCircle(x, y) {
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
-// Returns light or dark background
+
+/**
+ * Disply background in dark mode, unless light mode is chosen to show.
+ * Changing between the diffent mode. 
+ */
 function switchbackground() {
     let bodystyle = document.getElementById("map").style;
     let buttonstyle = document.getElementById("fullscreen").style;
@@ -138,7 +142,9 @@ function switchbackground() {
     }
 }
 
-// Fullscreen including Safari & IE11
+/**
+ * Fullscreen mode, including Safari & IE11
+ */
 function openFullscreen() {
     let doc = document.getElementById("map");
     if (doc.requestFullscreen) {

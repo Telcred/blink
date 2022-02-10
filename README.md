@@ -8,10 +8,12 @@ The idea behind this is to show where in the world the different events are happ
 
 ## Features
 
-- __The Logo and Heading__
+- __The Logo__
 
-    - Highlighted to the left, at the top of the page: Blink is easy to located with it's bright orange color for users to see. 
+    - Highlighted to the left, at the top of the page: Blink is easy to spot with it's bright orange color logo for users to see. 
 
+- __The background display__
+    - This section displays the differnt events and shows the users where the differnt events are happening. 
 
 
 
