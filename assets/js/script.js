@@ -63,27 +63,6 @@ function printEventsBySec(eventList, targetSecond) {
 }
 
 /**
- * Make events that have occurred within 10 seconds of each other.
- * @returns A list of events in no particular order.
- */
-function makeEventBatch() {
-    let answer = [];
-    answer.push(makeEvent(28, 90, 3));
-    answer.push(makeEvent(30, 65, 7));
-    answer.push(makeEvent(65, 50, 3));
-    answer.push(makeEvent(30, 75, 2));
-    answer.push(makeEvent(25, 60, 4));
-    answer.push(makeEvent(55, 35, 5));
-    answer.push(makeEvent(80, 30, 3));
-    answer.push(makeEvent(30, 10, 9));
-    answer.push(makeEvent(51, 40, 3));
-    answer.push(makeEvent(15, 40, 1));
-    answer.push(makeEvent(45, 60, 3));
-    answer.push(makeEvent(50, 25, 3));
-    return answer;
-}
-
-/**
  * Create an event. Events have a position and a time of occurrance.
  * @param {int} x - Horizontal position [0, 99].
  * @param {int} y - Vertical position [0, 99].
@@ -106,6 +85,7 @@ function makeEvent(x, y, second) {
  * @param {int} y - Vertical position [0, 99].
  */
 async function printCircle(x, y) {
+    await sleep(Math.random() * 1000); 
     let blinkingDot = document.createElement("div");
     document.getElementById("map").appendChild(blinkingDot);
     blinkingDot.setAttribute('class', 'blinkingDot');
