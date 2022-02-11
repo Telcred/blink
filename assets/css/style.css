@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Armata&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Armata&family=Roboto:wght@200&display=swap');
 * {
   margin: 0;
   padding: 0;
@@ -9,14 +8,7 @@ body {
   font-weight: 300;
   color: #000000;
 }
-/* Heading and logo */
-h1 {
-  font-size: 50px;
-  color: #fc6e2b;
-  position: absolute;
-  left: 13px;
 
-}
 /* Background-attachment */
 #map {
   background: url('../images/darkworldmaps.png');
@@ -47,6 +39,16 @@ h1 {
   background-color: black;
 }
 
+/* Heading and logo */
+h1 {
+  font-size: 150%;
+  font-family: Armata, sans-serif;
+  letter-spacing: 1px;
+  margin-right: 80px;
+  margin-top: 20px;
+  margin-bottom: -20px;
+  color: #fc6e2b;
+}
 
 h2 {
   font-size: 200%;
@@ -60,6 +62,7 @@ h2 {
 /* Infomation discibing the project  */
 .lowerHalf {
   color: black;
+  font-family: Roboto, Arial;
   font-size: 10px;
   position: absolute;
   padding-left: 15%;
