@@ -10,6 +10,8 @@ body {
   color: #000000;
 }
 
+/* The map part of the page */
+
 #upperHalf {
   height: 50%;
   width: 100%;
@@ -17,7 +19,6 @@ body {
   overflow: auto;
 }
 
-/* Background-attachment */
 #map {
   background: url('../images/darkworldmaps.png');
   background-repeat: no-repeat;
@@ -27,7 +28,6 @@ body {
   overflow: auto;
 }
 
-/* Blinking dot on map */
 .blinkingDot {
   background-color: #fc6e2b;
   width: 10px;
@@ -35,7 +35,6 @@ body {
   border-radius: 25px;
 }
 
-/* Fullscreen button */
 #fullscreen {
   border: none;
   position: absolute;
@@ -46,7 +45,8 @@ body {
   background-color: black;
 }
 
-/* Information describing the project  */
+/* The lower part of the page with a explonation of the application and the controlls.  */
+
 #lowerHalf {
   color: black;
   font-family: Roboto, Arial;
@@ -66,7 +66,6 @@ body {
   }
 }
 
-/* Heading and logo */
 h1 {
   font-size: 150%;
   font-family: Armata, sans-serif;
@@ -94,6 +93,11 @@ h2 {
   top: 20px;
 }
 
+.userInputElement {
+  display: inline-block;
+  width: 32%;
+}
+
 select {
   font-size: inherit;
 }
@@ -103,8 +107,3 @@ input {
   text-align: center;
 }
 
-.userInputElement {
-  display: inline-block;
-  width: 32%;
-
-}

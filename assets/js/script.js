@@ -27,12 +27,14 @@ document.getElementById("durationSec").addEventListener("input", function (event
 let fullscreenbutton = document.getElementById("fullscreen");
 fullscreenbutton.addEventListener("click", openFullscreen);
 
-// Set up the impact for changing background and button color between dark and light.
+// Set up the control for changing background and button color between dark and light.
 let button = document.getElementById("mode");
 button.addEventListener("change", switchbackground);
 
 // Run the application.
 main();
+
+
 
 /**
  * Print out new batches of event repeatedly.
@@ -144,5 +146,3 @@ function openFullscreen() {
         map.msRequestFullscreen(); // IE11 
     }
 }
-
-// ReadME

@@ -4,10 +4,9 @@
 
 [Blink](https://emmabergner.github.io/blink/) is a web browser application that displays a geographic visualisation of events, and a demo aimed for the company Telcred. This company offers a cloud service for physical access control (basically unlocking doors) worldwide. This version of the application comes with a built-in dataset for demonstration. The intention is to connect to a live data source but that is outside the scope of this project. 
 
-The idea behind this is to show users that events are happening, where in the world the events are happening and at what time the events are happening. 
+The idea is to show users that events are happening, where in the world the events are happening and at what time the events are happening. 
 
- Blink can be used for other companies as well who have events and use geographic locations. It can be used externally for marketing purposes and internally for the employees ego boost. Placing a monitor running Blink in the lobby of the company achieves both. Showcase their accomplishment and encourage the employees to continue working hard. But also. Displaying data like this also creates great opportunity for the users to locate where next potential expansion could be and where to possibly focus on. 
-
+ Blink can be used for other companies as well who have events and use geographic locations. It can be used externally for marketing purposes and internally for the employee ego boost. Placing a monitor running Blink in the lobby of the company achieves both. Showcasing their accomplishments and encouraging the employees to continue working hard. But also. Displaying data like this also allows users to locate where next potential expansion could be and where to possibly focus on. 
 
 ![Displays](assets/readme/amirespondive.png)
 
@@ -19,24 +18,24 @@ The idea behind this is to show users that events are happening, where in the wo
     - This section grabs users attention with an eye-catching orange blinking dot that appears and disappears repeatedly across the map.
      - This section also allows users to click on a fullscreen icon button and the map goes to fullscreen mode.   
 
-    ![Background](assets/readme/background.png)
+  ![Background](assets/readme/background.png)
 
 - __The Heading__
     - Center of the page: Blink is easy to spot for users, in a clear orange color. 
     - "Geographic Event Visualisation" is placed just underneath Blink for a welcoming and clean impression. 
-    -  This is a demo, and I've chosen my colors based of the companies own color pattern.
+    -  This is a demo, and I've chosen my colors based of Telcred's graphical profile.
      ![Logo and Heading](assets/readme/logo.png)
 
 - __The Information Section__
    - This section allows users to understand what the application does and the meaning of the orange dots. 
- ![Information ](assets/readme/infomation.png)
+ ![Information ](assets/readme/info.png)
 
-- __User Interaction Area__
-  - Depending on the users needs and requestment, users can make adjustments to the display. There are three controls for this purpose:
+- __Prefrences Area__
+  - Depending on the users needs and the nature of the data, users can make adjustments to the display. There are three controls for this purpose:
     - Users can change the color of the map background, between dark and light mode.
     - Users can change the size of the dots being displayed, between size 1 and size 20. 
-    - Users can change the appearance duration for the dots, between 1 and 10. A smaller value makes dots dissapare quicker. 
-  - The fields are set to automatic responds and shows users the immediately effect without pressing any additional buttons. 
+    - Users can change the appearance duration for the dots, between 1 and 10. A smaller value makes dots disappear quicker. 
+  - The controls show users the immediate effect without the need for pressing any additional buttons. 
 
     ![User Interaction](assets/readme/controlarea.png)
 
@@ -67,12 +66,12 @@ The idea behind this is to show users that events are happening, where in the wo
  Photoshop was used to resize and to edit background image.
 
 ## Testing 
-- This page is tested to work in different browsers: Chrome, Safari.
-- This page is tested to work on mobile devices in different browsers: Chrome, Safari. (See also next section.)
+- This page is tested to work in different browsers: Chrome and Safari.
+- This page is tested to work on mobile devices in different browsers: Chrome and Safari. (See also next section.)
 - This project is responsive, readable, easy to understand and looks good on all standard screen sizes.
 
 ### Known Limitations
-- The fullscreen function does not work for Iphone. [Read more](https://developer.apple.com/documentation/webkitjs/htmlvideoelement/1630649-webkitenterfullscreen)
+- The fullscreen function does not work for Iphone beacuse of limitations in the platform. [Read more](https://developer.apple.com/documentation/webkitjs/htmlvideoelement/1630649-webkitenterfullscreen)
 
 
 ### Validator Testing 
@@ -91,7 +90,7 @@ The idea behind this is to show users that events are happening, where in the wo
     - The most complex function has a cyclomatic complexity value of 4 while the median is 1.
 
 - Accessibility 
-  - The colors and fronts are easy to read and accessile by running it through lighthouse in devtools. 
+  - The colors and fronts are easy to read and accessible by running it through lighthouse in devtools. 
 
     ![Validator Testing](assets/readme/lighthouses.png)
 
@@ -107,11 +106,11 @@ The live link can be found here -  https://emmabergner.github.io/blinkl/
   
 ## Credits
 __Content__
-- The backgorund image is from: [vecteezy](https://static.vecteezy.com/ti/gratis-vektor/p1/3013055-frihand-varldskarta-skiss-pa-vit-bakgrund-vector.jpg)
+- The background image is from: [vecteezy](https://static.vecteezy.com/ti/gratis-vektor/p1/3013055-frihand-varldskarta-skiss-pa-vit-bakgrund-vector.jpg)
 
 - Thank you to engineers at Telcred for explaining JavaScript "async" and "await". 
 
-- I also used W3schools throughout the project. 
+- I also used W3Schools throughout the project. 
 
 
 
