@@ -2,7 +2,7 @@
 
 # Blink
 
-[Blink](https://emmabergner.github.io/blink/) is a web browser application that displays a geographic visualisation of events, and a demo aimed for the company Telcred. This company offers a cloud service for physical access control (basically unlocking doors) worldwide. This version of the application comes with a built-in dataset for demonstration. The intention is to connect to a live data source but that is outside the scope of this project. 
+[Blink](https://emmabergner.github.io/blink/) is a web browser application that displays a geographic visualization of events, and a demo aimed for the company Telcred. This company offers a cloud service for physical access control (basically unlocking doors) worldwide. This version of the application comes with a built-in dataset for demonstration. The intention is to connect to a live data source but that is outside the scope of this project. 
 
 The idea is to show users that events are happening, where in the world the events are happening and at what time the events are happening. 
 
@@ -22,7 +22,7 @@ The idea is to show users that events are happening, where in the world the even
 
 - __The Heading__
     - Center of the page: Blink is easy to spot for users, in a clear orange color. 
-    - "Geographic Event Visualisation" is placed just underneath Blink for a welcoming and clean impression. 
+    - "Geographic Event Visualization" is placed just underneath Blink for a welcoming and clean impression. 
     -  This is a demo, and I've chosen my colors based of Telcred's graphical profile.
      ![Logo and Heading](assets/readme/logo.png)
 
@@ -102,7 +102,7 @@ The idea is to show users that events are happening, where in the world the even
   - Once the main branch has been selected, press Save. 
 
 
-The live link can be found here -  https://emmabergner.github.io/blinkl/
+The live link can be found here -  https://emmabergner.github.io/blink/
   
 ## Credits
 __Content__
