@@ -8,7 +8,7 @@ The idea is to show users that events are happening, where in the world the even
 
  Blink can be used for other companies as well who have events and use geographic locations. It can be used externally for marketing purposes and internally for the employee ego boost. Placing a monitor running Blink in the lobby of the company achieves both. Showcasing their accomplishments and encouraging the employees to continue working hard. But also. Displaying data like this also allows users to locate where next potential expansion could be and where to possibly focus on. 
 
-![Displays](assets/readme/amirespondive.png)
+![Displays](assets/readme/ami.png)
 
 ## Features
 
@@ -18,7 +18,7 @@ The idea is to show users that events are happening, where in the world the even
     - This section grabs users attention with an eye-catching orange blinking dot that appears and disappears repeatedly across the map.
      - This section also allows users to click on a fullscreen icon button and the map goes to fullscreen mode.   
 
-  ![Background](assets/readme/background.png)
+![Background](assets/readme/map.png)
 
 - __The Heading__
     - Center of the page: Blink is easy to spot for users, in a clear orange color. 
@@ -28,7 +28,7 @@ The idea is to show users that events are happening, where in the world the even
 
 - __The Information Section__
    - This section allows users to understand what the application does and the meaning of the orange dots. 
- ![Information ](assets/readme/info.png)
+ ![Information ](assets/readme/infos.png)
 
 - __Prefrences Area__
   - Depending on the users needs and the nature of the data, users can make adjustments to the display. There are three controls for this purpose:
