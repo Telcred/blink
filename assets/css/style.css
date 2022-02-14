@@ -54,13 +54,13 @@ body {
   position: absolute;
   text-align: center;
   top: 50%;
-  width: 480px;
+  width: 460px;
   left: 50%;
   transform: translate(-50%, 0%);
 }
 
-/* For small screens size from 440px wide and down */
-@media screen and (max-width: 440px) {
+/* For small screens size from 460px wide and down */
+@media screen and (max-width: 460px) {
   #lowerHalf {
     width: 95%;
   }
