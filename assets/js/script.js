@@ -3,7 +3,7 @@ const lightworldmap = "url('assets/images/lightworldmaps.png')";
 const darkworldmap = "url('assets/images/darkworldmaps.png')";
 
 // Set up the control for the dot size.
-let dotSizePx = 10;
+let dotSizePx = 5;
 document.getElementById("dotSizePx").value = dotSizePx;
 document.getElementById("dotSizePx").addEventListener("input", function (event) {
     dotSizePx = Math.max(Math.min(event.target.value, 20), 1)
@@ -37,12 +37,12 @@ async function main() {
 }
 
 /**
- * Fetch a batch of events that have occurred within 10 seconds of each other.
+ * Fetch a batch of events that have occurred within 60 seconds of each other.
  * Print each as it occurred in real time. 
  */
 async function printBatch() {
     let eventList = makeEventBatch();
-    for (let targetSecond = 0; targetSecond < 10; targetSecond++) {
+    for (let targetSecond = 0; targetSecond < 59; targetSecond++) {
         printEventsBySec(eventList, targetSecond);
         await sleep(1000);
     }
@@ -66,7 +66,7 @@ function printEventsBySec(eventList, targetSecond) {
  * Create an event. Events have a position and a time of occurrance.
  * @param {int} x - Horizontal position [0, 99].
  * @param {int} y - Vertical position [0, 99].
- * @param {int} second - Time of occurrance in seconds [0, 9].
+ * @param {int} second - Time of occurrance in seconds [0, 59].
  * @returns The created event.
  */
 function makeEvent(x, y, second) {

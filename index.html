@@ -10,27 +10,25 @@
 
   <title>Blink</title>
 </head>
-
+<!-- Map section  -->
 <body>
+  <div id="upperHalf">
+    <div id="map"></div>
+    <button id="fullscreen" aria-label="Enter fullscreen mode">
+      <i class="fas fa-expand-arrows-alt" aria-hidden="true"></i>
+    </button>
 
-  <div id="map"></div>
-  <button id="fullscreen" aria-label="Enter fullscreen mode">
-    <i class="fas fa-expand-arrows-alt" aria-hidden="true"></i>
-  </button>
-
-
+  </div>
 
   <!-- Project description  -->
-  <div class="lowerHalf">
+  <div id="lowerHalf">
     <section>
       <h1>Blink:</h1>
       <h2>Geographic Event Visualization</h2>
 
       <p>
-        The Geographic Event Visualizer displays events with a latitude and longitude on a world map.
-        A batch of events is requested over HTTP once per minute and presented as
-        dots in the correct location, on a world map.
-        Events in the same batch will appear at the correct time relative to each other.</p>
+        The Geographic Event Visualizer Blink displays a batch of events with a latitude and longitude at the correct location on a world map.
+        Events in the same batch will appear at the correct time relative to each other as orange dots.</p>
     </section>
 
     <!-- User input, changing screen color, dot size, dot appearance duration -->
@@ -55,7 +53,7 @@
 
   <!-- Data -->
   <script src="assets/js/data.js"></script>
-  
+
   <!-- Application -->
   <script src="assets/js/script.js"></script>
 

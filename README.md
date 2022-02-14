@@ -14,9 +14,9 @@ The idea behind this is to show users that events are happening, where in the wo
 
 - __The Background Display__
 
-    - This section includes an image of a world map. The image displays where in the world the different events are happening.
-    - This section allows users to click on a fullscreen icon and the image goes to fullscreen mode. 
-    - This section grabs users attention with an eye-catching orange blinking dot that appears and disappears repeatedly across the image.  
+    - This section includes an image of a world map. The map displays where in the world the different events are happening.
+    - This section allows users to click on a fullscreen icon and the map goes to fullscreen mode. 
+    - This section grabs users attention with an eye-catching orange blinking dot that appears and disappears repeatedly across the map.  
 
     ![Background](assets/readme/background.png)
 
@@ -28,15 +28,17 @@ The idea behind this is to show users that events are happening, where in the wo
      ![Logo and Heading](assets/readme/logo.png)
 
 - __The Information Section__
-   - This section allows users to understand what the event does and their meaning. 
+   - This section allows users to understand what the application does and the meaning of the orange dots. 
  ![Information ](assets/readme/info.png)
 
 - __User Interaction Area__
-   - In this section there are three fields for users to interact:
-        - Users can change color of the background, between dark and light mode.
-        - Users can change the size of the dots being displayed, between size 1 and size 20. 
-        - Users can change the appearance duration for the dots, between 1 and 10. 
-    - The fields are set to automatic responds and shows users the immediately effect without pressing ant additional buttons. 
+
+  - Depending on the circumstances, the users can make ajustments to the display. There are three controlls for this purpose:
+
+    - Users can change the color of the map background, between dark and light mode.
+    - Users can change the size of the dots being displayed, between size 1 and size 20. 
+    - Users can change the appearance duration for the dots, between 1 and 10. A smaller value makes dots dissapare quicker. 
+  - The fields are set to automatic responds and shows users the immediately effect without pressing any additional buttons. 
  ![User Interaction](assets/readme/userinteraction.png)
 
 ## Technologies Used 
@@ -52,7 +54,7 @@ The idea behind this is to show users that events are happening, where in the wo
     Google Fonts were used to import the font Aramata and Roboto as the font-family into the style.css file.
 
 - __Font Awesome:__
-     Font Awesome was used for the fullscreen icon.
+     Font Awesome was used for the fullscreen button icon.
 
 - __Git:__
      Git was used for version control.
@@ -69,24 +71,33 @@ The idea behind this is to show users that events are happening, where in the wo
 ## Testing 
 
 - This page is tested to work in different browsers: Chrome, Safari.
-- This page is tested to work on mobile devices in different browsers: Chrome, Safari.
+- This page is tested to work on mobile devices in different browsers: Chrome, Safari. (See also next section.)
 - This project is responsive, readable, easy to understand and looks good on all standard screen sizes.
 
-### Bugs
+### Known limitations
 - The fullscreen function does not work for Iphone. [Read more](https://developer.apple.com/documentation/webkitjs/htmlvideoelement/1630649-webkitenterfullscreen)
 
 
 ### Validator Testing 
 
  -- MÅSTE TESTA -- 
- 
+
 - HTML
   - No errors were returned when passing through the official W3C validator: 
-  [index.html](https://validator.w3.org/nu/?doc=https%3A%2F%2F8000-gray-dingo-ob9ikojk.ws-eu25.gitpod.io%2Findex.html),
+  [index.html](https://validator.w3.org/nu/?doc=https%3A%2F%2Femmabergner.github.io%2Fblink%2F),
 
 - CSS
-  - No errors were found when passing through the official (Jigsaw) validator: [style.css](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2F8000-gray-dingo-ob9ikojk.ws-eu25.gitpod.io%2Fassets%2Fcss%2Fstyle.css&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en).
+  - No errors were found when passing through the official (Jigsaw) validator: [style.css](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Femmabergner.github.io%2Fblink%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en).
 
+- CSS
+  - No errors was found when passing through the official [Jshint validator](https://jshint.com/)
+    - There are 11 functions in this file.
+    - Function with the largest signature take 3 arguments, while the median is 1.
+    - Largest function has 11 statements in it, while the median is 2.
+    - The most complex function has a cyclomatic complexity value of 4 while the median is 1.
+
+- Accessibility 
+  - The colors and fronts are easy to read and accessile by running it through lighthouse in devtools. 
 
 ![Validator Testing](assets/readme/lighthouse.png)
 
@@ -103,10 +114,12 @@ The live link can be found here -  https://emmabergner.github.io/blinkl/
   
 ## Credits
 __Content__
-- The inspiration for the project was taken from...
 
 - The backgorund image is from: [vecteezy](https://static.vecteezy.com/ti/gratis-vektor/p1/3013055-frihand-varldskarta-skiss-pa-vit-bakgrund-vector.jpg)
-- Thank you to Telcred for help with "async" and "await" function. 
+
+- Thank you to engineers at Telcred for explaining JavaScript "async" and "await". 
+
+- I also used W3schools thorughout the project. 
 
 
 
