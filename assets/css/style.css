@@ -62,7 +62,7 @@ body {
 /* For small screens size from 440px wide and down */
 @media screen and (max-width: 440px) {
   #lowerHalf {
-    width: 90%;
+    width: 95%;
   }
 }
 
