@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Armata&family=Roboto:wght@200&display=swap');
+
 * {
   margin: 0;
   padding: 0;
@@ -7,6 +8,13 @@
 body {
   font-weight: 300;
   color: #000000;
+}
+
+#upperHalf {
+  height: 50%;
+  width: 100%;
+  position: absolute;
+  overflow: auto;
 }
 
 /* Background-attachment */
@@ -38,6 +46,26 @@ body {
   background-color: black;
 }
 
+/* Information describing the project  */
+#lowerHalf {
+  color: black;
+  font-family: Roboto, Arial;
+  font-size: 11px;
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  width: 440px;
+  left: 50%;
+  transform: translate(-50%, 0%);
+}
+
+/* For small screens size from 440px wide and down */
+@media screen and (max-width: 440px) {
+  #lowerHalf {
+    width: 90%;
+  }
+}
+
 /* Heading and logo */
 h1 {
   font-size: 150%;
@@ -58,48 +86,21 @@ h2 {
   color: black;
 }
 
-#upperHalf {
-  height: 50%;
-  width: 100%;
-  position: absolute;
-  overflow: auto;
-}
-
-/* Information describing the project  */
-#lowerHalf {
-  color: black;
-  font-family: Roboto, Arial;
-  font-size: 11px;
-  position: absolute;
-  text-align: center;
-  top: 50%;
-  width: 440px;
-  left: 50%; 
-  transform: translate(-50%, 0%);
-}
-
-/* For small screens size from 440px wide and down */
-@media screen and (max-width: 440px) {
-  #lowerHalf {
-    width: 90%;
-  }
-}
-
 /* Buttons and input field */
+.userInput {
+  color: black;
+  font-size: 12px;
+  position: relative;
+  top: 20px;
+}
+
 select {
   font-size: inherit;
 }
 
 input {
   font-size: inherit;
-  text-align: right;
-}
-
-.userInput {
-  color: black;
-  font-size: 12px;
-  position: relative;
-  top: 20px;
+  text-align: center;
 }
 
 .userInputElement {

@@ -5,7 +5,7 @@
  */
  function makeEventBatch() {
     let answer = [];
-    answer.push(makeEvent(28, 90, 3)); //Print and remove a circle during 1 -10 seconds.
+    answer.push(makeEvent(28, 90, 3)); //Print and remove dots during 1 -10 seconds.
     answer.push(makeEvent(30, 65, 7));
     answer.push(makeEvent(65, 50, 3));
     answer.push(makeEvent(30, 75, 2));
@@ -18,7 +18,7 @@
     answer.push(makeEvent(45, 60, 3));
     answer.push(makeEvent(50, 25, 3));
 
-    answer.push(makeEvent(28, 90, 12)); //Print and remove a circle during 11 - 25 seconds.
+    answer.push(makeEvent(28, 90, 12)); //Print and remove dots during 11 - 25 seconds.
     answer.push(makeEvent(30, 65, 24));
     answer.push(makeEvent(65, 50, 16));
     answer.push(makeEvent(30, 75, 21));
@@ -31,7 +31,7 @@
     answer.push(makeEvent(45, 60, 18));
     answer.push(makeEvent(50, 25, 24));
 
-    answer.push(makeEvent(28, 90, 38)); //Print and remove a circle during 26 - 39 seconds.
+    answer.push(makeEvent(28, 90, 38)); //Print and remove dots during 26 - 39 seconds.
     answer.push(makeEvent(30, 65, 27));
     answer.push(makeEvent(65, 50, 29));
     answer.push(makeEvent(30, 75, 36));
@@ -44,7 +44,7 @@
     answer.push(makeEvent(45, 60, 31));
     answer.push(makeEvent(50, 25, 38));
 
-    answer.push(makeEvent(28, 90, 43)); //Print and remove a circle during 40 - 59 seconds.
+    answer.push(makeEvent(28, 90, 43)); //Print and remove dots during 40 - 59 seconds.
     answer.push(makeEvent(30, 65, 57));
     answer.push(makeEvent(65, 50, 53));
     answer.push(makeEvent(30, 75, 42));

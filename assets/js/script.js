@@ -1,3 +1,10 @@
+// This code prints out batches of events. 
+// Each event has a position and a time of occurrence. 
+// A batch of events is a collection of events that have occurred within 60 seconds of each other. 
+// Each batch gets printed as it occurred in real time, during 60 seconds. 
+// A new batch is fetched every 60 seconds and the process never stops. 
+// This version was created as a demo and fetches its data from data.js. 
+
 //Set up for the background image in dark and light color.
 const lightworldmap = "url('assets/images/lightworldmaps.png')";
 const darkworldmap = "url('assets/images/darkworldmaps.png')";
@@ -6,22 +13,22 @@ const darkworldmap = "url('assets/images/darkworldmaps.png')";
 let dotSizePx = 5;
 document.getElementById("dotSizePx").value = dotSizePx;
 document.getElementById("dotSizePx").addEventListener("input", function (event) {
-    dotSizePx = Math.max(Math.min(event.target.value, 20), 1)
+    dotSizePx = Math.max(Math.min(event.target.value, 20), 1);
 });
 
 //Set up the control for dot duration. 
 let durationSec = 3;
 document.getElementById("durationSec").value = durationSec;
 document.getElementById("durationSec").addEventListener("input", function (event) {
-    durationSec = Math.max(Math.min(event.target.value, 10), 1)
+    durationSec = Math.max(Math.min(event.target.value, 10), 1);
 });
 
 //Set up the control for fullscreen button.
-let fullscreenbutton = document.getElementById("fullscreen")
+let fullscreenbutton = document.getElementById("fullscreen");
 fullscreenbutton.addEventListener("click", openFullscreen);
 
-// Set up the inpact for changing background and button color between dark and light.
-let button = document.getElementById("mode")
+// Set up the impact for changing background and button color between dark and light.
+let button = document.getElementById("mode");
 button.addEventListener("change", switchbackground);
 
 // Run the application.
@@ -41,7 +48,7 @@ async function main() {
  * Print each as it occurred in real time. 
  */
 async function printBatch() {
-    let eventList = makeEventBatch();
+    let eventList = makeEventBatch(); //In data.js
     for (let targetSecond = 0; targetSecond < 59; targetSecond++) {
         printEventsBySec(eventList, targetSecond);
         await sleep(1000);
@@ -63,10 +70,10 @@ function printEventsBySec(eventList, targetSecond) {
 }
 
 /**
- * Create an event. Events have a position and a time of occurrance.
+ * Create an event. Events have a position and a time of occurrence.
  * @param {int} x - Horizontal position [0, 99].
  * @param {int} y - Vertical position [0, 99].
- * @param {int} second - Time of occurrance in seconds [0, 59].
+ * @param {int} second - Time of occurrence in seconds [0, 59].
  * @returns The created event.
  */
 function makeEvent(x, y, second) {
@@ -79,13 +86,13 @@ function makeEvent(x, y, second) {
 
 /**
  * Print and remove a circle at a given location. 
- * To determin the size of circle the global dotSizePx is used. 
- * To determin the time between printing and removing the global durationSec is used.
+ * To determine the size of circle the global dotSizePx is used. 
+ * To determine the time between printing and removing the global durationSec is used.
  * @param {int} x - Horizontal position [0, 99].
  * @param {int} y - Vertical position [0, 99].
  */
 async function printCircle(x, y) {
-    await sleep(Math.random() * 1000); 
+    await sleep(Math.random() * 1000);
     let blinkingDot = document.createElement("div");
     document.getElementById("map").appendChild(blinkingDot);
     blinkingDot.setAttribute('class', 'blinkingDot');
@@ -107,7 +114,7 @@ function sleep(ms) {
 }
 
 /**
- * Tuggle between dark mode and light mode.
+ * Toggle between dark mode and light mode.
  */
 function switchbackground() {
     let bodystyle = document.getElementById("map").style;
