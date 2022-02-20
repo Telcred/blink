@@ -50,7 +50,7 @@ async function main() {
  * Print each as it occurred in real time. 
  */
 async function printBatch() {
-    let eventList = makeEventBatch(); //In data.js
+    let eventList = await fetchBatch();
     for (let targetSecond = 0; targetSecond < 59; targetSecond++) {
         printEventsBySec(eventList, targetSecond);
         await sleep(1000);
@@ -145,4 +145,21 @@ function openFullscreen() {
     } else if (map.msRequestFullscreen) {
         map.msRequestFullscreen(); // IE11 
     }
+}
+
+async function fetchBatch() {
+	let response = await fetch("https://access.telcred.com/open/events/plot");
+	let data = await response.json();	
+
+	let result = [];
+	for (let i = 0; i < data.length; i++){
+		let d = data[i];
+		let x = (180+d.longitude-11)/3.6;
+		let y = (90-d.latitude+12)/(1.8-0.2);
+		result.push(makeEvent(
+			x,
+			y,
+			d.second));
+	}
+	return result;
 }
