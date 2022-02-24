@@ -101,8 +101,9 @@ async function printCircle(x, y) {
     blinkingDot.style.position = "absolute";
     blinkingDot.style.left = x + "%";
     blinkingDot.style.top = y + "%";
-    blinkingDot.style.height = dotSizePx + "px";
-    blinkingDot.style.width = dotSizePx + "px";
+    blinkingDot.style.height = dotSizePx/4 + "vmin";
+    blinkingDot.style.width = dotSizePx/4 + "vmin";
+    blinkingDot.style.transform = "translate(" + (-dotSizePx/8) + "vmin, " + (-dotSizePx/8) + "vmin)";
     await sleep(durationSec * 1000); // Wait for time to remove.
     blinkingDot.remove();
 }
