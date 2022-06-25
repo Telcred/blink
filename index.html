@@ -8,6 +8,8 @@
   <meta name="description" content="Blink is a geographic visualization of events">
   <link rel="stylesheet" href="assets/css/style.css">
 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
   <title>Blink</title>
 </head>
 
@@ -15,10 +17,13 @@
 <body>
   <div id="upperHalf">
     <div id="map"></div>
-    <button id="fullscreen" aria-label="Enter fullscreen mode">
+    <button id="fullscreen" class="highlight" aria-label="Enter fullscreen mode">
       <i class="fas fa-expand-arrows-alt" aria-hidden="true"></i>
     </button>
-
+    <button id="halfscreen" class="highlight" aria-label="Toggle halfscreen mode">
+      <!-- <i class="fas fa-expand-arrows-alt" aria-hidden="true"></i> -->
+      <i class="fa fa-gear"></i>
+    </button>
   </div>
 
   <!-- Explonation of the application and the controlls.  -->

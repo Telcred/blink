@@ -27,6 +27,11 @@ document.getElementById("durationSec").addEventListener("input", function (event
 let fullscreenbutton = document.getElementById("fullscreen");
 fullscreenbutton.addEventListener("click", openFullscreen);
 
+//Set up the control for halfscreen button.
+let useHalfscreen = false;
+let halfscreenbutton = document.getElementById("halfscreen");
+halfscreenbutton.addEventListener("click", toggleHalfscreen);
+
 // Set up the control for changing background and button color between dark and light.
 let button = document.getElementById("mode");
 button.addEventListener("change", switchbackground);
@@ -101,9 +106,9 @@ async function printCircle(x, y) {
     blinkingDot.style.position = "absolute";
     blinkingDot.style.left = x + "%";
     blinkingDot.style.top = y + "%";
-    blinkingDot.style.height = dotSizePx/4 + "vmin";
-    blinkingDot.style.width = dotSizePx/4 + "vmin";
-    blinkingDot.style.transform = "translate(" + (-dotSizePx/8) + "vmin, " + (-dotSizePx/8) + "vmin)";
+    blinkingDot.style.height = dotSizePx / 4 + "vmin";
+    blinkingDot.style.width = dotSizePx / 4 + "vmin";
+    blinkingDot.style.transform = "translate(" + (-dotSizePx / 8) + "vmin, " + (-dotSizePx / 8) + "vmin)";
     await sleep(durationSec * 1000); // Wait for time to remove.
     blinkingDot.remove();
 }
@@ -130,7 +135,6 @@ function switchbackground() {
     } else {
         buttonstyle.backgroundColor = "#ffffff";
         bodystyle.backgroundImage = lightworldmap;
-
     }
 }
 
@@ -148,19 +152,38 @@ function openFullscreen() {
     }
 }
 
-async function fetchBatch() {
-	let response = await fetch("https://access.telcred.com/open/events/plot");
-	let data = await response.json();	
+/**
+ * Toggle halfscreen mode. 
+ */
+function toggleHalfscreen() {
+    if (useHalfscreen) {
+        let upper = document.getElementById("upperHalf");
+        upper.style.height = "100%"
+        let lower = document.getElementById("lowerHalf");
+        lower.style.display = "none"
+    }
+    else {
+        let upper = document.getElementById("upperHalf");
+        upper.style.height = "50%"
+        let lower = document.getElementById("lowerHalf");
+        lower.style.display = "block"
+    }
+    useHalfscreen = !useHalfscreen;
+}
 
-	let result = [];
-	for (let i = 0; i < data.length; i++){
-		let d = data[i];
-		let x = (180+d.longitude-11)/3.6;
-		let y = (90-d.latitude+12)/(1.8-0.2);
-		result.push(makeEvent(
-			x,
-			y,
-			d.second));
-	}
-	return result;
+async function fetchBatch() {
+    let response = await fetch("https://access.telcred.com/open/events/plot");
+    let data = await response.json();
+
+    let result = [];
+    for (let i = 0; i < data.length; i++) {
+        let d = data[i];
+        let x = (180 + d.longitude - 11) / 3.6;
+        let y = (90 - d.latitude + 12) / (1.8 - 0.2);
+        result.push(makeEvent(
+            x,
+            y,
+            d.second));
+    }
+    return result;
 }

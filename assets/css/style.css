@@ -13,7 +13,7 @@ body {
 /* The map part of the page */
 
 #upperHalf {
-  height: 50%;
+  height: 100%; /* 50% for halfscreen mode */
   width: 100%;
   position: absolute;
   overflow: auto;
@@ -36,13 +36,24 @@ body {
 }
 
 #fullscreen {
+  left: 13px;
+}
+
+#halfscreen {
+  left: 35px;
+}
+
+.highlight {
   border: none;
   position: absolute;
   bottom: 13px;
-  left: 13px;
   font-size: 15px;
-  color: gray;
+  color: #505050;
   background-color: black;
+}
+
+.highlight:hover {
+  color: orange;
 }
 
 /* The lower part of the page with a explonation of the application and the controlls.  */
@@ -57,6 +68,7 @@ body {
   width: 460px;
   left: 50%;
   transform: translate(-50%, 0%);
+  display: none;  /* block for halfscreen mode */
 }
 
 /* For small screens size from 460px wide and down */
